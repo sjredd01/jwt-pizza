@@ -52,7 +52,7 @@ jobs:
     needs: build
     permissions:
       id-token: write
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
   env:
     version: ${{needs.build.outputs.version}}
   steps:
