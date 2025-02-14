@@ -56,8 +56,8 @@ jobs:
   env:
     version: ${{needs.build.outputs.version}}
   steps:
-  - name: Create OIDC token to AWS
-    uses: aws-actions/configure-aws-credentials@v4
+    - name: Create OIDC token to AWS
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         audience: sts.amazonaws.com
         aws-region: us-east-1
