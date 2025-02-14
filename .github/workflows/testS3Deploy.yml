@@ -19,6 +19,7 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT }}:role/${{ secrets.CI_IAM_ROLE }}
       - name: Push to AWS S3
+
         run: |
           mkdir dist
           printf "<h1>CloudFront deployment with GitHub Actions</h1>" > dist/index.html
