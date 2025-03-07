@@ -53,6 +53,9 @@ jobs:
     permissions:
       id-token: write
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://pizza.sjredd01.click
     env:
       version: ${{needs.build.outputs.version}}
     steps:
@@ -73,16 +76,7 @@ jobs:
           echo Deploying $version
           aws s3 cp dist s3://${{ secrets.APP_BUCKET }} --recursive
           aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
-  
-  deploy:
-  needs: build
-  permissions:
-    id-token: write
-  runs-on: ubuntu-latest
-  environment:
-    name: production
-    url: https://pizza.byucsstudent.click
-  
+
   release:
     needs:
       - build
