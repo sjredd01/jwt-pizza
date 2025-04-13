@@ -6,7 +6,7 @@ Target: pizza.sjredd01.click
 Classification:Identification and Authentication failure
 Description: Did a sniper attack and found usable passwords
 
-![Did not work](./picture1png)
+![Did not work](./picture1.png)
 
 Correction: Same as the attack on Micah, don’t respond with passwords. To keep security high. Only respond 200 with nothing else.
 
